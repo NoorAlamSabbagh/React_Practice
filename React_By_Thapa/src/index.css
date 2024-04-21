@@ -1,0 +1,33 @@
+
+
+
+
+
+
+
+
+
+
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.heading{
+    color: #fa9191;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-shadow: 0px 2px 4px #ffe9c5;
+    margin: 50px 0;
+    font-family: 'Inconsolata', monospace;
+}
+.img_div {
+    display: flex;
+    justify-content: center;
+}
+.img_div img{
+width: 200px;
+height: 150px;
+} */
