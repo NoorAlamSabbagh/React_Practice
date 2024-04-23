@@ -25,5 +25,4 @@ const CovidTracker = () => {
 };
 
 
-
 export default CovidTracker;
