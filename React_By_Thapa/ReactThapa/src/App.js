@@ -11,7 +11,7 @@ import Pagination from "./Pagination/pagination";
 // import UseCallbackHook from "./hook/UseCallbackHook";
 // import SweetAlert from "./sweetAlert/SweetAlert";
 // import CovidTracker from "./Basics/covidTracker";
-// import UseEffect from "./UseContext/UseEffect";
+import UseEffect from "./UseContext/UseEffect";
 // import Covid from './components/covid'
 
 // import Form from './form/Form'
@@ -35,7 +35,7 @@ const App = () => {
       {/* <UseCallbackHook/> */}
       {/* <UseEffect2 /> */}
       {/* <UseEffect /> */}
-      {/* <UseContext /> */}
+      <UseContext />
       {/* <Covid /> */}
       {/* <Hook /> */}
       {/* <Timer /> */}
