@@ -129,3 +129,13 @@ src
 # Selectors to access order data
 # Component to display order details
 # Root file to render the app
+
+
+//<===============Optimzation=============>
+Your Redux Toolkit-based Todo App works well, but we can optimize it in several ways:
+
+🔹 Key Optimizations:
+(1)Debounce Input Handling - Prevents unnecessary re-renders when typing tasks.
+(2)Throttle Task Deletion - Ensures tasks are not deleted too quickly (accidental clicks).
+(3)Efficient Redux Selectors - Uses useMemo to prevent unnecessary renders.
+(4)Avoid Unnecessary Re-renders - Optimizing dispatch calls inside useCallback.
