@@ -1,0 +1,7 @@
+Redux Toolkit is an official toolset from the Redux team that makes working with Redux easier and less time-consuming.
+
+Instead of doing everything manually-like creating actions, reducers, and managing state immutability-RTK gives you
+built in functions that handles most of the work for you.
+
+In simpler terms, its a shortcut that helps you manage your app's state with code and fewer mistakes.
+The goal is to make Redux more begineer friendly thatreduce the amount of code you need to write.
