@@ -1,11 +1,11 @@
 import { MdDeleteForever } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux"
-import { addTask, deleteTask, fetchTask } from "../store";
+import { addTask, deleteTask, fetchTask, reset } from "../store";
 import { useState } from "react";
 
 
 export const Todo = () => {
-    const [task, setTasks] = useState();
+    const [userTask, setUserTasks] = useState("");
     // const tasks = useSelector((state) => state.task);
     //<===========Using Redux ToolKit =============>
     //bas taskReducer add kiya 
@@ -16,12 +16,15 @@ export const Todo = () => {
 
     const handleformSubmit = (e) => {
         e.preventDefault();
-        dispatch(addTask(task))
-        return setTasks("")
+        dispatch(addTask(userTask))
+        return setUserTasks("")
     }
 
     const handleTaskDelete = (id) => {
        return dispatch(deleteTask(id))
+    }
+    const resetTask = () => {
+        dispatch(reset())
     }
 
     const handleFetchTasks = () => {
@@ -38,8 +41,8 @@ export const Todo = () => {
                         <input type="text"
                             id="input-box"
                             placeholder="Add a new task"
-                            value={task}
-                            onChange={(e) => setTasks(e.target.value)}
+                            value={userTask}
+                            onChange={(e) => setUserTasks(e.target.value)}
                             />
                         <button>Add Task</button>
                     </form>
@@ -60,6 +63,7 @@ export const Todo = () => {
                         })
                     }
                 </ul>
+                <button onClick={()=>resetTask()}>Clear All</button>
             </div>
         </div>
     )

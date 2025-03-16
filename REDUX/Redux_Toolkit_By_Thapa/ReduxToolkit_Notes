@@ -50,3 +50,82 @@ Use the Provider component to pass the Redux store to the entire app.
 const count = useSelector(state => state.property);
 Selector function: We define a selector function that takes the entire Redux store state as an argument
 and returns the specific piece of data we need.
+
+//
+//Lecture: Dispatch Actions in React using useDispatch
+* Use the useDispatch hook to dispatch actions from a React component
+
+
+//
+//Lecture: RTK Folder Structure
+src
+|-app
+|  |-store.js
+|- features
+|   |-tasks
+|      |- taskSlice.js
+|      |- tasAction.js
+|      |- taskSelector.js
+|      |- taskAPI.js
+|
+| - index.js
+
+# Redux store configuration
+# The tasks slice
+# Action creators (optional if needed seperately)
+# Selectors (if you have complex selectors)
+# Async API calls (if using RTK query or other async logic)
+# Root entry file
+
+
+//////////////////////////////
+# Configures the Redux store
+
+src
+|-app
+|  |-store.js
+|- features
+|   |-products
+|   |  |- productSlice.js
+|   |  |- productAPI.js
+|   |  |- productSelector.js
+|   |  |- productList.js
+|   |
+|   |-cart
+|   |  |- cartSlice.js
+|   |  |- cartSelector.js
+|   |  |- cart.js
+|   |
+|   |-user
+|   |  |- userSlice.js
+|   |  |- userAPI.js
+|   |  |- userSelector.js
+|   |  |- userProfile.js
+|   |
+|   |-orders
+|   |  |- orderSlice.js
+|   |  |- orderAPI.js
+|   |  |- orderSelector.js
+|   |  |- orderSummary.js
+|   |
+| - index.js
+
+# Handles product data(list, details, etc.)
+# Manages product related async actions (e.g. fetching products)
+# Selectors to access product data from the store
+# Component to display list of products
+
+# Manages cart state (add, remove, update, quantity)
+# Selectors for cart data (total price, item count, etc)
+# Component to display the cart
+
+# Manages user auth state (login, logout, registeration)
+# Manages async actions like login logout
+# Selectors for accessing user data
+# Component to display user profile info
+
+# Manages order-related state(order list, status)
+# Async actions like palcing an order
+# Selectors to access order data
+# Component to display order details
+# Root file to render the app

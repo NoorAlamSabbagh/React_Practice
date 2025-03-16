@@ -164,11 +164,14 @@ const taskReducer = createSlice({
                 (currTask, index) => index !== action.payload
             );
         },
+        reset(state){
+            state.task = []
+        }
     },
 });
 
 // Export the action creators
-export const { addTask, deleteTask, fetchTask } = taskReducer.actions;
+export const { addTask, deleteTask, fetchTask, reset } = taskReducer.actions;
 
 // Create and export the store
 export const store = configureStore({
@@ -182,7 +185,11 @@ console.log("Initial State:", store.getState());
 
 // Dispatch some actions for testing
 store.dispatch(addTask("Buy Mango"));
-store.dispatch(addTask("Buy Apple"));
+console.log(store.getState());
+console.log(store.dispatch(addTask("Buy Grapes")));
+console.log(store.dispatch(deleteTask(1)));
+console.log(store.getState());
+console.log(store.dispatch(addTask("Buy Apple")));
 
 // Log the updated state
 console.log("Updated State:", store.getState());
