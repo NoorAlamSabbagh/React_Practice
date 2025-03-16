@@ -10,7 +10,7 @@ export const Todo = () => {
     //<===========Using Redux ToolKit =============>
     //bas taskReducer add kiya 
     const tasks = useSelector((state) => state.taskReducer.task);
-    //  console.log("tasks", tasks);
+     console.log("tasks", tasks);
 
     const dispatch = useDispatch();
 
