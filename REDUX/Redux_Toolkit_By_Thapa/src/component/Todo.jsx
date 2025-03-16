@@ -1,6 +1,6 @@
 import { MdDeleteForever } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux"
-import { addTask, deleteTask, fetchTask, reset } from "../store";
+import { addTask, deleteTask, reset } from "../features/tasks/tasksSlice";
 import { useState } from "react";
 
 

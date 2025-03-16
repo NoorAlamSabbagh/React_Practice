@@ -143,53 +143,67 @@
 
 
 ////////////////////////
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+// import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-// Initial state
-const initialState = {
-    task: [],
-    isLoading: false,
-};
+// // Initial state
+// const initialState = {
+//     task: [],
+//     isLoading: false,
+// };
 
-// Create a slice
-const taskReducer = createSlice({
-    name: "task",
-    initialState: initialState,
-    reducers: {
-        addTask(state, action) {
-            state.task.push(action.payload);
-        },
-        deleteTask(state, action) {
-            state.task = state.task.filter(
-                (currTask, index) => index !== action.payload
-            );
-        },
-        reset(state){
-            state.task = []
-        }
-    },
-});
+// // Create a slice
+// const taskReducer = createSlice({
+//     name: "task",
+//     initialState: initialState,
+//     reducers: {
+//         addTask(state, action) {
+//             state.task.push(action.payload);
+//         },
+//         deleteTask(state, action) {
+//             state.task = state.task.filter(
+//                 (currTask, index) => index !== action.payload
+//             );
+//         },
+//         reset(state){
+//             state.task = []
+//         }
+//     },
+// });
 
-// Export the action creators
-export const { addTask, deleteTask, fetchTask, reset } = taskReducer.actions;
+// // Export the action creators
+// export const { addTask, deleteTask, fetchTask, reset } = taskReducer.actions;
+
+// // Create and export the store
+// export const store = configureStore({
+//     reducer: {
+//         taskReducer: taskReducer.reducer,
+//     },
+// });
+
+// // Log the initial state
+// console.log("Initial State:", store.getState());
+
+// // Dispatch some actions for testing
+// store.dispatch(addTask("Buy Mango"));
+// console.log(store.getState());
+// console.log(store.dispatch(addTask("Buy Grapes")));
+// console.log(store.dispatch(deleteTask(1)));
+// console.log(store.getState());
+// console.log(store.dispatch(addTask("Buy Apple")));
+
+// // Log the updated state
+// console.log("Updated State:", store.getState());
+
+
+
+//<==========Using Folder Structure=============>
+import { configureStore } from "@reduxjs/toolkit";
+import taskReducer from "./features/tasks/tasksSlice";
 
 // Create and export the store
 export const store = configureStore({
     reducer: {
-        taskReducer: taskReducer.reducer,
+        taskReducer: taskReducer,
     },
 });
 
-// Log the initial state
-console.log("Initial State:", store.getState());
-
-// Dispatch some actions for testing
-store.dispatch(addTask("Buy Mango"));
-console.log(store.getState());
-console.log(store.dispatch(addTask("Buy Grapes")));
-console.log(store.dispatch(deleteTask(1)));
-console.log(store.getState());
-console.log(store.dispatch(addTask("Buy Apple")));
-
-// Log the updated state
-console.log("Updated State:", store.getState());
