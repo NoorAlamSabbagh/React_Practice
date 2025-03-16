@@ -1,7 +1,52 @@
-Redux Toolkit is an official toolset from the Redux team that makes working with Redux easier and less time-consuming.
+//<=========What is Redux Toolkit==========>
+(1)Redux Toolkit is an official toolset from the Redux team that makes working with Redux easier and less time-consuming.
 
-Instead of doing everything manually-like creating actions, reducers, and managing state immutability-RTK gives you
+(2)Instead of doing everything manually-like creating actions, reducers, and managing state immutability-RTK gives you
 built in functions that handles most of the work for you.
 
-In simpler terms, its a shortcut that helps you manage your app's state with code and fewer mistakes.
+(3)In simpler terms, its a shortcut that helps you manage your app's state with code and fewer mistakes.
 The goal is to make Redux more begineer friendly thatreduce the amount of code you need to write.
+
+//<===========Why is Redux ToolKit=============>
+(1)Less Boilerplate: In Traditional Redux, You write a lot of repetitive code just to get basic things done.
+RTK cuts down on all that extra code and gives cleaner and simpler way to manage state.
+
+(2)Simpler Setup: It also automatically sets up your store, adds some middleware for things like async actions, and even connects you to Redux Dev Tools for debugging without extra configuration.
+
+(3)Built-In Async Handing: If you have ever used Redux Thunk for async tasks like fetch data from API, RTK 
+has a built in feature called createAsync Thunk that makes even easier to handle async actions.
+
+//<=======Setup and Steps I have follow using Redux Toolkit===========>
+//(1)Steps: npm i redux@tolkit
+export const store = configureStore({
+    reducer: {
+        // taskReducer: taskReducer,
+         taskReducer,
+    },
+})
+
+//(2)Steps:Lec2:CreateSlice in Redux Toolkit: Simplifying Action Creators And Reducers
+<=======RTK createSlice=========>
+//In Redux Toolkit(RTK): createSlice is a utility function that simplifies the process of creating a Redux slice of state.
+It combines actions and Reducersinto a single object. making the setup of Redux state management more streamlined and organized.
+
+A slice is essentially a section of the Redux state, along with the actions and reducers that operate on it.
+Using createSlice You can define:
+* The initial state of the slice
+* Reducers that definehoe the state changes in respone to actions.
+* Action creators automatically generated based on reducer names.
+
+//
+//Lec: Steps to Connect
+* Install react-redux 
+npm install react-redux
+* Wrap the app with the Provider
+Use the Provider component to pass the Redux store to the entire app.
+
+//
+//Lec: Access Redux Toolkit Store Data in React
+//Access Redux State in React using useSelector
+* Use the useSelector hook to read data from the Redux store.
+const count = useSelector(state => state.property);
+Selector function: We define a selector function that takes the entire Redux store state as an argument
+and returns the specific piece of data we need.
