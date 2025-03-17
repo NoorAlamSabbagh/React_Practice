@@ -83,6 +83,10 @@ export const Todo = () => {
     
     // ✅ Optimized selector using useMemo (prevents unnecessary re-renders)
     const tasks = useSelector((state) => state.taskReducer.task);
+    
+    // // ✅ Optimized: Memoize `tasks` to prevent unnecessary re-renders
+    // const tasks = useSelector((state) => state.taskReducer.task);
+    // const memoizedTasks = useMemo(() => tasks, [tasks])
     const dispatch = useDispatch();
 
     // ✅ Debounced function for input handling (waits 300ms before updating)
