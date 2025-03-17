@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { devtools } from "zustand/middleware";
 
 export interface Habit {
     id: String;
@@ -13,16 +14,17 @@ interface HabitState {
     addHabit: (name: string, frequency: "daily" | "weekly") => void
 }
 
-const useHabitStore = create<HabitState>()((set, get) =>{
+const useHabitStore = create<HabitState>()(devtools((set, get) =>{
     return {
      habits: [],
      addHabit: (name, frequency) => set((state)=>{
          return {
             habits: [
+                ...state.habits,
              {
-                id: "1",
-                name: "Read",
-                frequency: "daily",
+                id: Date.now().toString(),
+                name,
+                frequency,
                 completedDates: [],
                 createdAt: new Date().toISOString(),
              }
@@ -30,6 +32,7 @@ const useHabitStore = create<HabitState>()((set, get) =>{
          }
      }),
     }
-});
+})
+);
 
-export default useHabitStore
+export default useHabitStore;

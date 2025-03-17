@@ -6,15 +6,15 @@ import useHabitStore from "../store/store";
 const AddHabitForm = () => {
     const [name, setName] = useState("");
     const [frequency, setFrequency] = useState<"daily" | "weekly">("daily");
-    const {habits, addHabit} = useHabitStore();
+    const { habits, addHabit } = useHabitStore();
     console.log("Habits", habits)
 
-    const handleSubmit = (e:React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if(name.trim()){
+        if (name.trim()) {
             addHabit(name, frequency);
             setName("");
-    }
+        }
     }
 
     return (
@@ -42,7 +42,7 @@ const AddHabitForm = () => {
                         <MenuItem value="weekly">Weekly</MenuItem>
                     </Select>
                 </FormControl>
-                <Button type="submit" varient="contained" color="primary">
+                <Button type="submit" variant="contained" color="primary">
                     Add Habit
                 </Button>
             </Box>
