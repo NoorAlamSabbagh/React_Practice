@@ -6,7 +6,7 @@ import useCourseStore from '../courseStore'
 const courseForm = () => {
     const addCourse = useCourseStore((state) => state.addCourse);
     const [courseTitle, setCourseTitle] = useState('');
-    console.log('CourseForm rendered', courseTitle);
+    console.log('CourseForm rendered Revised', courseTitle);
 
     const handleCourseSubmit = (e) => {
         e.preventDefault();
